@@ -1,0 +1,33 @@
+version: "3"
+services:
+  mysql:
+    image: mysql:8
+    container_name: mike-mysql
+    ports:
+      - 127.0.0.1:9020:3306
+    volumes:
+      - mysql:/var/lib/mysql:rw
+    networks:
+      - mike
+    environment:
+      MYSQL_ROOT_PASSWORD: mike
+    restart: always
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin:5
+    container_name: mike-phpmyadmin
+    ports:
+      - 127.0.0.1:9021:80
+    networks:
+      - mike
+    environment:
+      PMA_HOST: "mike-mysql"
+    restart: always
+
+volumes:
+  mysql:
+    driver: local
+
+networks:
+  mike:
+    driver: bridge
