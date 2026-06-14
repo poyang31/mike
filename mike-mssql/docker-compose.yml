@@ -10,7 +10,7 @@ services:
       - mike-mssql
     environment:
       ACCEPT_EULA: "Y"
-      MSSQL_SA_PASSWORD: "mike"
+      MSSQL_SA_PASSWORD: "MikeMSSQL^2025"
     restart: always
 
 volumes:

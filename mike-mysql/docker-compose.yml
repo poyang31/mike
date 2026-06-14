@@ -9,7 +9,7 @@ services:
     networks:
       - mike-mysql
     environment:
-      MYSQL_ROOT_PASSWORD: mike
+      MYSQL_ROOT_PASSWORD: "MikeMySQL^9"
     restart: always
 
   phpmyadmin:
