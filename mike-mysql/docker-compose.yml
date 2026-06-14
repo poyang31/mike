@@ -1,6 +1,6 @@
 services:
   mysql:
-    image: mysql:8
+    image: mysql:9
     container_name: mike-mysql
     ports:
       - 127.0.0.1:9020:3306
@@ -13,7 +13,7 @@ services:
     restart: always
 
   phpmyadmin:
-    image: phpmyadmin/phpmyadmin:5
+    image: phpmyadmin:5
     container_name: mike-phpmyadmin
     ports:
       - 127.0.0.1:9021:80

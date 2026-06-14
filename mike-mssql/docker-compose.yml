@@ -1,6 +1,6 @@
 services:
   mssql:
-    image: mcr.microsoft.com/mssql/server:2022-latest
+    image: mcr.microsoft.com/mssql/server:2025-latest
     container_name: mike-mssql
     ports:
       - 127.0.0.1:9019:1433
