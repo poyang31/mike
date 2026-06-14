@@ -1,0 +1,22 @@
+services:
+  mssql:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: mike-mssql
+    ports:
+      - 127.0.0.1:9019:1433
+    volumes:
+      - mssql:/var/opt/mssql:rw
+    networks:
+      - mike-mssql
+    environment:
+      ACCEPT_EULA: "Y"
+      MSSQL_SA_PASSWORD: "mike"
+    restart: always
+
+volumes:
+  mssql:
+    driver: local
+
+networks:
+  mike-mssql:
+    driver: bridge
